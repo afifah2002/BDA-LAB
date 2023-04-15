@@ -99,3 +99,101 @@ Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.insert({rollno:
   insertedIds: { '0': ObjectId("6439d97325857f2b4d40c683") }
 }
 
+
+
+
+C:\Users\bmsce>mongoimport
+2023-04-15T04:41:59.328+0530    no collection specified
+2023-04-15T04:41:59.329+0530    using filename '' as collection
+2023-04-15T04:41:59.329+0530    error validating settings: invalid collection name: collection name cannot be an empty string
+
+C:\Users\bmsce>mongoexport
+2023-04-15T04:42:05.612+0530    must specify a collection
+2023-04-15T04:42:05.613+0530    try 'mongoexport --help' for more information
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.drop();
+true
+
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.createCollection("Customers");
+{ ok: 1 }
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.insert({cust_id:1,Balance:200, Type:"S"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439e0b325857f2b4d40c684") }
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.insert({cust_id:1,Balance:1000, Type:"Z"})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439e0bd25857f2b4d40c685") }
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.insert({cust_id:2,Balance:100, Type:"Z"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439e0c825857f2b4d40c686") }
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.insert({cust_id:2,Balance:1000, Type:"C"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439e0d025857f2b4d40c687") }
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.insert({cust_id:2,Balance:500, Type:"C"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439e0da25857f2b4d40c688") }
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.insert({cust_id:2,Balance:50, Type:"S"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439e0e425857f2b4d40c689") }
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.insert({cust_id:3,Balance:500, Type:"Z"});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439e0ec25857f2b4d40c68a") }
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.Customers.find();
+[
+  {
+    _id: ObjectId("6439e0b325857f2b4d40c684"),
+    cust_id: 1,
+    Balance: 200,
+    Type: 'S'
+  },
+  {
+    _id: ObjectId("6439e0bd25857f2b4d40c685"),
+    cust_id: 1,
+    Balance: 1000,
+    Type: 'Z'
+  },
+  {
+    _id: ObjectId("6439e0c825857f2b4d40c686"),
+    cust_id: 2,
+    Balance: 100,
+    Type: 'Z'
+  },
+  {
+    _id: ObjectId("6439e0d025857f2b4d40c687"),
+    cust_id: 2,
+    Balance: 1000,
+    Type: 'C'
+  },
+  {
+    _id: ObjectId("6439e0da25857f2b4d40c688"),
+    cust_id: 2,
+    Balance: 500,
+    Type: 'C'
+  },
+  {
+    _id: ObjectId("6439e0e425857f2b4d40c689"),
+    cust_id: 2,
+    Balance: 50,
+    Type: 'S'
+  },
+  {
+    _id: ObjectId("6439e0ec25857f2b4d40c68a"),
+    cust_id: 3,
+    Balance: 500,
+    Type: 'Z'
+  }
+]
