@@ -1,0 +1,101 @@
+
+C:\Users\bmsce>mongosh "mongodb+srv://cluster0.zjzka9g.mongodb.net/myFirstDatabase" --apiVersion 1 --username afifahcs20
+Enter password: ***************
+Current Mongosh Log ID: 6439d51b51a6bc61e83e6f30
+Connecting to:          mongodb+srv://<credentials>@cluster0.zjzka9g.mongodb.net/myFirstDatabase?appName=mongosh+1.8.0
+Using MongoDB:          6.0.5 (API Version 1)
+Using Mongosh:          1.8.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase>
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.createCollection("student");
+{ ok: 1 }
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.insert({rollno:1,age:21,cont:9876,email:"antara.de9@gmail.com"});
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439d71d25857f2b4d40c67e") }
+}
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.insertOne({rollno:2,age:22,cont:9976,email:"anushka.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6439d78b25857f2b4d40c67f")
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.insertOne({rollno:3,age:21,cont:5576,email:"anubhav.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6439d7b525857f2b4d40c680")
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.insertOne({rollno:4,age:20,cont:4476,email:"pani.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6439d7e825857f2b4d40c681")
+}
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.insertOne({rollno:10,age:23,cont:2276,email:"rekha.de9@gmail.com"});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6439d81325857f2b4d40c682")
+}
+
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.find();
+[
+  {
+    _id: ObjectId("6439d71d25857f2b4d40c67e"),
+    rollno: 1,
+    age: 21,
+    cont: 9876,
+    email: 'antara.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("6439d78b25857f2b4d40c67f"),
+    rollno: 2,
+    age: 22,
+    cont: 9976,
+    email: 'anushka.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("6439d7b525857f2b4d40c680"),
+    rollno: 3,
+    age: 21,
+    cont: 5576,
+    email: 'anubhav.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("6439d7e825857f2b4d40c681"),
+    rollno: 4,
+    age: 20,
+    cont: 4476,
+    email: 'pani.de9@gmail.com'
+  },
+  {
+    _id: ObjectId("6439d81325857f2b4d40c682"),
+    rollno: 10,
+    age: 23,
+    cont: 2276,
+    email: 'rekha.de9@gmail.com'
+  }
+]
+
+
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.update({rollno:10},{$set:{email:"abhinav@gmail.com"}});
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+Atlas atlas-unu5oe-shard-0 [primary] myFirstDatabase> db.student.insert({rollno:11,name:"abc"},{$set:{name:"fem"}});
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("6439d97325857f2b4d40c683") }
+}
+
